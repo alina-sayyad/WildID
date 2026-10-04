@@ -638,7 +638,7 @@ def render_overview():
                     <em>leaves a visual signature.</em>
                 </div>
                 <div class="lede hero-lede">
-                    WildID retrieves the most similar known individuals for a camera-trap image —
+                    WildID retrieves the most similar known individuals for a camera-trap image
                     and declines to name one when the evidence is not strong enough.
                 </div>
                 <div class="hero-actions">
