@@ -29,13 +29,7 @@ MODEL_NAME = "hf-hub:BVRA/MegaDescriptor-T-224"
 THRESHOLD = 0.90
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Display-only label derived from THRESHOLD (the decision logic uses THRESHOLD itself).
 THRESHOLD_LABEL = f"{THRESHOLD:.2f}"
-
-
-# ---------------------------------------------------------------------------
-# Inference pipeline (unchanged)
-# ---------------------------------------------------------------------------
 
 @st.cache_resource(show_spinner="Loading WildID model...")
 def load_model():
@@ -121,11 +115,7 @@ def search_gallery(image, model, gallery_embeddings, gallery_ids, gallery_filena
         "top1_identity": top1_identity,
         "candidates": candidates,
     }
-
-
-# ---------------------------------------------------------------------------
-# Presentation helpers
-# ---------------------------------------------------------------------------
+    
 
 APP_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
@@ -1224,10 +1214,6 @@ def fmt_score(value):
     return f"{value:.4f}"
 
 
-# ---------------------------------------------------------------------------
-# Pages
-# ---------------------------------------------------------------------------
-
 def render_overview():
     render_html(
         """
@@ -1237,7 +1223,7 @@ def render_overview():
         <div class="hero-content">
         <div class="eyebrow hero-eyebrow">Conservation intelligence · prototype</div>
         <div class="hero-title" role="heading" aria-level="1">Every individual,<br><em>leaves a visual signature.</em></div>
-        <div class="lede hero-lede">WildID retrieves the most similar known individuals for a camera-trap image — and declines to name one when the evidence is not strong enough.</div>
+        <div class="lede hero-lede">WildID retrieves the most similar known individuals for a camera-trap image and declines to name one when the evidence is not strong enough.</div>
         <div class="hero-actions">
         <a class="hero-action-primary" href="?page=Identify" target="_self">Open Identify</a>
         <a class="hero-action-secondary" href="#how-it-works">How it works</a>
