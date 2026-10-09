@@ -20,7 +20,7 @@ st.set_page_config(
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DEMO_ROOT = PROJECT_ROOT.parent / "R001_Demo"
+DEMO_ROOT = PROJECT_ROOT / "R001_Demo"
 IMAGE_DIR = DEMO_ROOT / "images"
 RESULTS_DIR = PROJECT_ROOT / "results"
 GALLERY_FILE = RESULTS_DIR / "gallery_embeddings.pt"
